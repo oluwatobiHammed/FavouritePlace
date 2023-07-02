@@ -26,10 +26,10 @@ struct PlcaeDetailView: View {
                 placeDetailView()
             }
             .frame(maxHeight: .infinity)
+            .edgesIgnoringSafeArea(.all)
+            
             customBackButton()
-                .padding(.vertical, 10)
         }
-        .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden()
         .onAppear {
            // DispatchQueue.main.async {
