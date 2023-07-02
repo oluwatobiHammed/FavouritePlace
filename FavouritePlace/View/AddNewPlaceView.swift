@@ -100,9 +100,14 @@ struct AddNewPlaceView: View, KeyboardReadable {
    
     
     private func savePlace() {
-        // all the logive for saving the place
-        dismiss()
-        
+        // all the logic for saving the place
+        viewModel.showProgress.toggle()
+        Task {
+            await viewModel.savePlace()
+            DispatchQueue.main.async {
+                dismiss()
+            }
+        }
     }
 
 }

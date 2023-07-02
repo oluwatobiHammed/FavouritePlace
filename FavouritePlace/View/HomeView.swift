@@ -79,7 +79,9 @@ struct HomeView: View {
     
     private func placesCell(_ place: PlaceViewModel, imageMaxWidth: CGFloat) -> some View {
         NavigationLink {
-            Text(place.name)
+            LazyView {
+                PlcaeDetailView(place: place)
+            }
         } label: {
             ZStack(alignment: .bottom) {
                 place.placeImage

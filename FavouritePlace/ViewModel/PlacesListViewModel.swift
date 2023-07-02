@@ -19,6 +19,10 @@ class PlacesListViewModel: ObservableObject {
     }
     
     func fetchPlaces() {
-        places = PlaceViewModel.sampleData
+        //places = PlaceViewModel.sampleData
+        places = CoreDataManager.shared.getAll().map({ place in
+            return PlaceViewModel(id: place.id!, name: place.name!, city: place.city!, country: place.country!, note: place.notes!, placeImage: Image(uiImage: UIImage(data: place.image!)!))
+
+        })
     }
 }
