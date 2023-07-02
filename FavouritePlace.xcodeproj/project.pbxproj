@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		310922252A517803001617A4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310922242A517803001617A4 /* HomeView.swift */; };
+		3177906E2A51EF0400E333EF /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3177906D2A51EF0400E333EF /* LazyView.swift */; };
 		3180A18A2A51C0560048D2B0 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3180A1892A51C0560048D2B0 /* UIApplication+Extension.swift */; };
 		3180A18C2A51E00D0048D2B0 /* KeyboardReadable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3180A18B2A51E00D0048D2B0 /* KeyboardReadable+Extension.swift */; };
 		3180A18E2A51E04C0048D2B0 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3180A18D2A51E04C0048D2B0 /* View+Extension.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		310922242A517803001617A4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3177906D2A51EF0400E333EF /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		3180A1892A51C0560048D2B0 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		3180A18B2A51E00D0048D2B0 /* KeyboardReadable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardReadable+Extension.swift"; sourceTree = "<group>"; };
 		3180A18D2A51E04C0048D2B0 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				31CE2F762A516DA1006BF7D1 /* AddNewPlaceView.swift */,
 				310922242A517803001617A4 /* HomeView.swift */,
+				3177906D2A51EF0400E333EF /* LazyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				3180A18A2A51C0560048D2B0 /* UIApplication+Extension.swift in Sources */,
 				31CE2F772A516DA1006BF7D1 /* AddNewPlaceView.swift in Sources */,
 				31CE2F462A5152D9006BF7D1 /* ContentView.swift in Sources */,
+				3177906E2A51EF0400E333EF /* LazyView.swift in Sources */,
 				31CE2F712A515773006BF7D1 /* PlaceViewModel.swift in Sources */,
 				31CE2F752A516850006BF7D1 /* AddPlaceVM.swift in Sources */,
 				31CE2F442A5152D9006BF7D1 /* FavouritePlaceApp.swift in Sources */,

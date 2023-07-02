@@ -20,7 +20,7 @@ struct HomeView: View {
                      placesView()
                     
                 } else {
-                  // emptyStateView()
+                   emptyStateView()
                 }
                 
                 Spacer()
@@ -67,8 +67,9 @@ struct HomeView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(viewModel.places) { place in
-                        placesCell(place, imageMaxWidth: geo.size.width * 0.97)
-                        
+                        LazyView {
+                            placesCell(place, imageMaxWidth: geo.size.width * 0.97)
+                        }
                     }
                 }
             }
@@ -108,6 +109,16 @@ struct HomeView: View {
         }
         .buttonStyle(.plain)
         
+    }
+    
+    private func emptyStateView() -> some View {
+        Group {
+            Spacer()
+            Text("Let's add some favorite places by tapping on +")
+                .font(.largeTitle)
+                .foregroundStyle(.secondary.opacity(0.5))
+            
+        }
     }
 }
 
