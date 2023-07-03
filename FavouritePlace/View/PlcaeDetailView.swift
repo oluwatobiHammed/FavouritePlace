@@ -1,15 +1,14 @@
 //
-//  PlcaeDetailView.swift
-//  FavouritePlace
+//  PlaceDetailView.swift
+//  FavoritePlaces
 //
-//  Created by Oladipupo Oluwatobi on 02/07/2023.
+//  Created by DevTechie on 4/28/23.
 //
 
 import SwiftUI
 import MapKit
 
-struct PlcaeDetailView: View {
-    
+struct PlaceDetailView: View {
     var place: PlaceViewModel
     @ObservedObject var locationManager: LocationManager
     @Environment(\.dismiss) var dismiss
@@ -21,33 +20,31 @@ struct PlcaeDetailView: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-            ZStack(alignment: .bottom) {
+            ZStack (alignment: .bottom) {
                 backgroundImageView()
                 placeDetailView()
             }
             .frame(maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all)
-            
+           
             customBackButton()
+                .padding([.top],30)
+                
         }
         .navigationBarBackButtonHidden()
         .onAppear {
-           // DispatchQueue.main.async {
-              locationManager.getLocationFor(address: place.city + " " + place.country)
-          //  }
-           
+            locationManager.getLocationFor(address: place.city + " " + place.country)
         }
+        .edgesIgnoringSafeArea([.all])
     }
     
     fileprivate func customBackButton() -> some View {
         HStack {
             Button(action: {
-                withAnimation{
+                withAnimation {
                     dismiss()
                 }
-                
             }) {
-                Image(systemName:"chevron.left")
+                Image(systemName: "chevron.left")
                     .font(.title)
             }
             .padding(.horizontal)
@@ -58,10 +55,9 @@ struct PlcaeDetailView: View {
             Spacer()
         }
         .padding(.leading)
-        
     }
     
-    fileprivate func backgroundImageView()  -> some View {
+    fileprivate func backgroundImageView() -> some View {
         GeometryReader { geo in
             place.placeImage
                 .resizable()
@@ -72,7 +68,7 @@ struct PlcaeDetailView: View {
         }
     }
     
-    fileprivate func placeDetailView()  -> some View {
+    fileprivate func placeDetailView() -> some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 HStack {
@@ -85,10 +81,11 @@ struct PlcaeDetailView: View {
                     Text(place.city)
                     Spacer()
                     Text(place.country)
-                    
                 }
                 .foregroundStyle(.secondary)
+                
                 Text(place.note)
+                
                 Spacer()
                 Map(coordinateRegion: $locationManager.region, interactionModes: .zoom)
                     .frame(height: 150)
@@ -104,10 +101,8 @@ struct PlcaeDetailView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
-                
             }
             .padding(10)
-            
         }
         .padding()
         .frame(maxWidth: .infinity)
@@ -116,7 +111,9 @@ struct PlcaeDetailView: View {
     }
 }
 
-//#Preview {
-//    PlcaeDetailView()
-//        .padding(.all)
-//}
+struct PlaceDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        PlaceDetailView(place: PlaceViewModel.sampleData[1])
+            .preferredColorScheme(.dark)
+    }
+}

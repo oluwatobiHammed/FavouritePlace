@@ -80,7 +80,8 @@ struct HomeView: View {
     private func placesCell(_ place: PlaceViewModel, imageMaxWidth: CGFloat) -> some View {
         NavigationLink {
             LazyView {
-                PlcaeDetailView(place: place)
+                PlaceDetailView(place: place)
+                    .edgesIgnoringSafeArea([.all])
             }
         } label: {
             ZStack(alignment: .bottom) {
@@ -125,3 +126,10 @@ struct HomeView: View {
 }
 
 
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView(viewModel: PlacesListViewModel())
+            .preferredColorScheme(.dark)
+    }
+}
